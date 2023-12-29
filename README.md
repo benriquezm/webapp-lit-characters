@@ -39,3 +39,11 @@ Verify the deployment by navigating to your server address in your preferred bro
 ```sh
 http://localhost:8000/
 ```
+
+## Annotations
+>To use the Bootstrap CSS framework, it's necessary to add the following method to each file where the components contain Bootstrap class:
+```sh
+createRenderRoot() {
+    return this;
+}
+```
