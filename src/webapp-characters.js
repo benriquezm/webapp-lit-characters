@@ -1,4 +1,6 @@
-import { LitElement, html } from "lit";
+import { LitElement, html } from 'lit';
+
+import './components/cardlist/cardlist';
 
 export class WebappCharacters extends LitElement {
     static properties = {
@@ -10,9 +12,17 @@ export class WebappCharacters extends LitElement {
         this.greeting = 'Hola'
     }
 
+    createRenderRoot() {
+        return this;
+    }
+
     render() {
         return html`
-            <p>${this.greeting} Mundo!</p>
+            <div class='container bg-body'>
+                <div class='root pb-5'>
+                    <card-list></card-list>
+                </div>
+            </div>
         `;
     }
 }
