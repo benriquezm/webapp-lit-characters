@@ -8,7 +8,7 @@ export class MyDetail extends LitElement{
     section{
         margin-top: -6.5px;
     }
-    .container{
+    .container-horizontal{
         display: flex;
         border: 1px solid #7F3C9A;
         flex-direction: column;
@@ -48,8 +48,54 @@ export class MyDetail extends LitElement{
 
     }
 
+    .container-vertical {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        /*width: auto;*/
+        border-radius: 5px;
+        text-align: center;
+        /*height: auto;*/
+        padding-top: 1.5rem;
+        /*padding-bottom: 1.5rem;*/
+        margin: 0.5rem;
+        background-color: #043c6e;
+        .img-rounded {
+            height: 200px;
+            width: 200px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+        }
+        .card{
+            padding: 1rem;
+            /*margin-top: 8px;*/
+            p{
+                color: #74FC09;
+                /*margin: 0 0 1rem 0;*/
+            }
+            .name {
+                font-size: 62px;
+                font-weight: bold;
+                text-align: center;
+                color: #7F3C9A;
+                margin: 0;
+                text-shadow: 1.5px  0px 0px #01B2C6,
+                             0px  1.5px 0px #01B2C6,
+                             -1.5px  0px 0px #01B2C6,
+                             0px -1.5px 0px #01B2C6;
+            }
+            .sub-title{
+                color: #34F0E7;
+            }
+        }
+    }
+
+    .container-vertical:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
     @media (min-width: 768px){
-        .container{
+        .container-horizontal{
             flex-direction: row;
             align-items: center;
             justify-content: space-evenly;
@@ -69,7 +115,7 @@ export class MyDetail extends LitElement{
     }
 
     @media (min-width: 1200px){
-        .container{
+        .container-horizontal{
             height: 70vh;
         }
         .profile-img{
@@ -90,6 +136,7 @@ export class MyDetail extends LitElement{
         id: {},
         image: {},
         characterId: {},
+        orientation: {},
     }
 
     constructor() {
@@ -101,15 +148,15 @@ export class MyDetail extends LitElement{
         this.id = '';
         this.image = "39.jpeg";
         this.characterId = 21;
+        this.orientation = "horizontal";
     }
 
     render (){
         return html`
             <section>
-                <div class="container">
-                    <a href="/">go home</a>
+                <div class="container-${this.orientation}">
                     <div class="img-container">
-                        <img class="profile-img" src= ${this.image} alt=""/>
+                        <img class="${this.orientation == 'vertical' ? 'img-rounded': 'profile-img'}" src= ${this.image} alt=""/>
                     </div>
                     <div class="card">
                         <h1 class="name">${this.name}</h1>
