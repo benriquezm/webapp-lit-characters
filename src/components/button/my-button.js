@@ -19,7 +19,7 @@ export class MyButton extends LitElement{
             border-radius: 10px;
             width: 7rem;
             text-decoration: none;
-        }
+        } -A
         .back:hover{
             background-color: #01B2C6;
             color: #7F3C9A;
