@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit";
+import '../button/my-button'
 
 export class MyDetail extends LitElement{
     static styles = css`
@@ -8,12 +9,15 @@ export class MyDetail extends LitElement{
     section{
         margin-top: -6.5px;
     }
+    .wrapper{
+        background-color:#135764;
+    }
     .container{
         display: flex;
-        border: 1px solid #7F3C9A;
         flex-direction: column;
         font-size: 22px;
-        background-color: #135764;
+        height: 80vh;
+        align-items:center;
         .img-container{
             display: flex;
             justify-content: center;
@@ -28,7 +32,7 @@ export class MyDetail extends LitElement{
             margin-top: 8px;
             p{
                 color: #74FC09;
-                margin: 0 0 1rem 0;
+                margin: 0 0 .5rem 0;
             }
             .name {
                 font-size: 62px;
@@ -50,11 +54,12 @@ export class MyDetail extends LitElement{
 
     @media (min-width: 768px){
         .container{
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: inherit;
             align-items: center;
-            justify-content: space-evenly;
             padding: 1rem;
-            height: 63vh;
+            height: 54vh;
             .profile-img{
                 width: 325px;
                 height: 325px;
@@ -62,15 +67,26 @@ export class MyDetail extends LitElement{
             .card{
                 margin-left: 1rem;
                 .name{
-                    font-size: 64px
+                    font-size: 63px
                 }
+            }
+            .button-wrapper{
+                grid-column: 1 / span 2;
+                justify-self: center;
+                margin-top: 1rem;
             } 
         }
     }
 
     @media (min-width: 1200px){
+        .card{
+            width: max-content; 
+        }
         .container{
             height: 70vh;
+            width: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: inherit;
         }
         .profile-img{
             width: 425px;
@@ -106,16 +122,21 @@ export class MyDetail extends LitElement{
     render (){
         return html`
             <section>
-                <div class="container">
-                    <a href="/">go home</a>
-                    <div class="img-container">
-                        <img class="profile-img" src= ${this.image} alt=""/>
-                    </div>
-                    <div class="card">
-                        <h1 class="name">${this.name}</h1>
-                        <p class="episode"> <span class="sub-title">Episode: </span>${this.episode}</p>
-                        <p class="gender"> <span class="sub-title">Gender: </span>${this.gender}</p>
-                        <p class="species"> <span class="sub-title">Species: </span>${this.species}</p>
+            <section>
+                <div class="wrapper">
+                    <div class="container">
+                        <div class="img-container">
+                            <img class="profile-img" src= ${this.image} alt=""/>
+                        </div>
+                        <div class="card">
+                            <h1 class="name">${this.name}</h1>
+                            <p class="episode"> <span class="sub-title">Episode: </span>${this.episode}</p>
+                            <p class="gender"> <span class="sub-title">Gender: </span>${this.gender}</p>
+                            <p class="species"> <span class="sub-title">Species: </span>${this.species}</p>
+                        </div>
+                        <div class="button-wrapper">
+                            <my-button><my-button>
+                        </div>
                     </div>
                 </div>
             </section>
