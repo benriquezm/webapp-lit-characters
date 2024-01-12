@@ -1,5 +1,4 @@
 import { LitElement, html, css } from "lit";
-import './my-header'
 
 export class MyDetail extends LitElement{
     static styles = css`
@@ -90,7 +89,7 @@ export class MyDetail extends LitElement{
         species:{}, 
         id: {},
         image: {},
-
+        characterId: {},
     }
 
     constructor() {
@@ -101,14 +100,14 @@ export class MyDetail extends LitElement{
         this.species = "Human"
         this.id = '';
         this.image = "39.jpeg";
-        
+        this.characterId = 21;
     }
 
     render (){
         return html`
-            <my-header></my-header>
             <section>
                 <div class="container">
+                    <a href="/">go home</a>
                     <div class="img-container">
                         <img class="profile-img" src= ${this.image} alt=""/>
                     </div>
