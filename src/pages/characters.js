@@ -16,6 +16,7 @@ export class Characters extends LitElement {
       grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       background-color: #135964;
       padding: 1.5rem;
+      margin-top: -4px;
     }
   `;
 
@@ -67,9 +68,13 @@ export class Characters extends LitElement {
       <my-header></my-header>
       <div class="wrapper-list">
         ${this.characters?.map(character => {
+          const { id, image, name } = character;
+          console.log("name: ", name);
           return html`
             <my-detail
               orientation="vertical"
+              image="${image}"
+              name="${name}"
             />
           `;
         })}

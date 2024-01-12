@@ -74,7 +74,7 @@ export class MyDetail extends LitElement{
                 /*margin: 0 0 1rem 0;*/
             }
             .name {
-                font-size: 62px;
+                font-size: 32px;
                 font-weight: bold;
                 text-align: center;
                 color: #7F3C9A;
@@ -152,21 +152,34 @@ export class MyDetail extends LitElement{
     }
 
     render (){
-        return html`
-            <section>
-                <div class="container-${this.orientation}">
-                    <div class="img-container">
-                        <img class="${this.orientation == 'vertical' ? 'img-rounded': 'profile-img'}" src= ${this.image} alt=""/>
+        return this.orientation != 'vertical' 
+            ? html`
+                <section>
+                    <div class="container-${this.orientation}">
+                        <div class="img-container">
+                            <img class="${this.orientation == 'vertical' ? 'img-rounded': 'profile-img'}" src= ${this.image} alt=""/>
+                        </div>
+                        <div class="card">
+                            <h1 class="name">${this.name}</h1>
+                            <p class="episode"> <span class="sub-title">Episode: </span>${this.episode}</p>
+                            <p class="gender"> <span class="sub-title">Gender: </span>${this.gender}</p>
+                            <p class="species"> <span class="sub-title">Species: </span>${this.species}</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h1 class="name">${this.name}</h1>
-                        <p class="episode"> <span class="sub-title">Episode: </span>${this.episode}</p>
-                        <p class="gender"> <span class="sub-title">Gender: </span>${this.gender}</p>
-                        <p class="species"> <span class="sub-title">Species: </span>${this.species}</p>
+                </section>
+            `
+            : html`
+                <section>
+                    <div class="container-${this.orientation}">
+                        <div class="img-container">
+                            <img class="${this.orientation == 'vertical' ? 'img-rounded': 'profile-img'}" src= ${this.image} alt=""/>
+                        </div>
+                        <div class="card">
+                            <h1 class="name">${this.name}</h1>
+                        </div>
                     </div>
-                </div>
-            </section>
-        `;
+                </section>
+            `;
     }
 }
 
