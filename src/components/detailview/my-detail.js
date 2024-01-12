@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit";
+import '../button/my-button'
 
 export class MyDetail extends LitElement{
     static styles = css`
@@ -10,10 +11,10 @@ export class MyDetail extends LitElement{
     }
     .container-horizontal{
         display: flex;
-        border: 1px solid #7F3C9A;
         flex-direction: column;
         font-size: 22px;
-        background-color: #135764;
+        height: 80vh;
+        align-items:center;
         .img-container{
             display: flex;
             justify-content: center;
@@ -28,7 +29,7 @@ export class MyDetail extends LitElement{
             margin-top: 8px;
             p{
                 color: #74FC09;
-                margin: 0 0 1rem 0;
+                margin: 0 0 .5rem 0;
             }
             .name {
                 font-size: 62px;
@@ -98,9 +99,8 @@ export class MyDetail extends LitElement{
         .container-horizontal{
             flex-direction: row;
             align-items: center;
-            justify-content: space-evenly;
             padding: 1rem;
-            height: 63vh;
+            height: 54vh;
             .profile-img{
                 width: 325px;
                 height: 325px;
@@ -108,8 +108,13 @@ export class MyDetail extends LitElement{
             .card{
                 margin-left: 1rem;
                 .name{
-                    font-size: 64px
+                    font-size: 63px
                 }
+            }
+            .button-wrapper{
+                grid-column: 1 / span 2;
+                justify-self: center;
+                margin-top: 1rem;
             } 
         }
     }
@@ -117,6 +122,9 @@ export class MyDetail extends LitElement{
     @media (min-width: 1200px){
         .container-horizontal{
             height: 70vh;
+            width: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: inherit;
         }
         .profile-img{
             width: 425px;
@@ -164,6 +172,9 @@ export class MyDetail extends LitElement{
                             <p class="episode"> <span class="sub-title">Episode: </span>${this.episode}</p>
                             <p class="gender"> <span class="sub-title">Gender: </span>${this.gender}</p>
                             <p class="species"> <span class="sub-title">Species: </span>${this.species}</p>
+                        </div>
+                        <div class="button-wrapper">
+                            <my-button><my-button>
                         </div>
                     </div>
                 </section>
