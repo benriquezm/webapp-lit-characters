@@ -34,6 +34,12 @@ npm i
 npm run start
 ```
 
+For init project with configuration active of fallback for use router.
+
+```sh
+npm run start:fallback
+```
+
 Verify the deployment by navigating to your server address in your preferred browser.
 
 ```sh
