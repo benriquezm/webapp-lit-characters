@@ -16,6 +16,7 @@ export class Characters extends LitElement {
       grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       background-color: #135964;
       padding: 1.5rem;
+      margin-top: -4px;
     }
   `;
 
