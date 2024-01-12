@@ -67,9 +67,13 @@ export class Characters extends LitElement {
       <my-header></my-header>
       <div class="wrapper-list">
         ${this.characters?.map(character => {
+          const { id, image, name } = character;
+          console.log("name: ", name);
           return html`
             <my-detail
               orientation="vertical"
+              image="${image}"
+              name="${name}"
             />
           `;
         })}

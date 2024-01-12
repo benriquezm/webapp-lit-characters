@@ -74,7 +74,7 @@ export class MyDetail extends LitElement{
                 /*margin: 0 0 1rem 0;*/
             }
             .name {
-                font-size: 62px;
+                font-size: 32px;
                 font-weight: bold;
                 text-align: center;
                 color: #7F3C9A;
