@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vaadin/router": "^1.7.5",
     "lit": "^2.8.0"
   },
   "devDependencies": {

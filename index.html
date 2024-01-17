@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <script type="module" src="./src/my-webcomponent.js"></script>
+    <script type="module" src="./src/my-webcomponent-attribute.js"></script>
+    <script type="module" src="./src/my-webcomponent-conditional.js"></script>
+    <script type="module" src="./src/my-handler.js"></script>
     <script type="module" src="./src/main.js"></script>
     <style>
         body {
@@ -16,6 +20,21 @@
     </style>
 </head>
 <body>
-    <div id="app"></div>
+    <!-- propertie persons as array
+        <my-webcomponent person="{'name': 'Pedro', 'age': 25}"></my-webcomponent>
+    <my-webcomponent persons="['Ana', 'Juan']"></my-webcomponent>
+    <my-webcomponent persons='["Ana", "Juan"]'></my-webcomponent>
+    <my-webcomponent fullname="Some Name"></my-webcomponent>
+    -->
+
+    <!--<my-main></my-main>-->
+    <!--
+        Test component with attribute
+        <my-webcomponent-attribute name="Some Name"></my-webcomponent-attribute>
+    <my-webcomponent-attribute persons='["Ana", "Juan"]'></my-webcomponent-attribute>
+    <my-webcomponent-attribute persons="['Ana', 'Juan']"></my-webcomponent-attribute>
+    <my-webcomponent-attribute fullname="Some Name"></my-webcomponent-attribute>
+    -->
+    <my-handler></my-handler>
 </body>
 </html>

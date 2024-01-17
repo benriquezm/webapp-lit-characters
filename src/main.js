@@ -1,25 +1,37 @@
-import { Router } from '@vaadin/router';
+import { LitElement, html } from 'lit';
 
-function initRouter() {
-    const router = new Router(document.querySelector('#app'));
+import './my-webcomponent-obj';
+import './my-webcomponent-attribute';
 
-    router.setRoutes([
-        {
-            path: '/',
-            component: 'page-characters',
-            action: () => import('./pages/characters')
-        },
-        {
-            path: '/character-details',
-            component: 'page-character-details',
-            action: () => import('./pages/character-details')
-        },
-        {
-            path: '(.*)',
-            component: 'page-not-found',
-            action: () => import('./pages/not-found')
-        }
-    ]);
+export class MyMain extends LitElement {
+    /**
+     * Render example for binding from JavaScript file
+     */
+    /*render() {
+        return html`
+            <p>Hola Mundo!!!</p>
+            <my-webcomponent-obj person="{'name': 'Pedro', 'age': 25}"></my-webcomponent-obj>
+            <my-webcomponent-obj persons='["Ana", "Juan"]'></my-webcomponent-obj>
+            <my-webcomponent-obj .person=${JSON.parse('{"name": "Pedro", "age": 25}')}></my-webcomponent-obj>
+            <my-webcomponent-obj persons="['Ana', 'Juan']"></my-webcomponent-obj>
+        `;
+    }*/
+    /**
+     * Render example for correct binding use Attribute
+     */
+    /*render() {
+        return html`
+            <my-webcomponent-attribute name="Some Name"></my-webcomponent-attribute>
+            <my-webcomponent-attribute persons='["Ana", "Juan"]'></my-webcomponent-attribute>
+            <my-webcomponent-attribute persons="['Ana', 'Juan']"></my-webcomponent-attribute>
+            <my-webcomponent-attribute fullname="Some Name"></my-webcomponent-attribute>
+        `;
+    }*/
+    /*render() {
+        return html `
+            <my-webcomponent-conditional .isShouldRender=${true}></my-webcomponent-conditional>
+        `;
+    }*/
 }
 
-window.addEventListener('load', () => initRouter());
+customElements.define('my-main', MyMain);
